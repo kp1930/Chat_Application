@@ -31,6 +31,14 @@
           }
         },
         {
+          "client_id": "1052073324525-ljv7lpesthtl58ffneklhabhpt83fjrd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chatapplication",
+            "certificate_hash": "274ab98ca960997b12539afc7e496b3f7b0d273b"
+          }
+        },
+        {
           "client_id": "1052073324525-prv0m9617heh03va6lcgv5eat4idgdsl.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -124,10 +124,9 @@ public class MessageActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 chats.clear();
-                Chat chat = dataSnapshot.getValue(Chat.class);
-                if (chat.getReceiver().equals(myid) && chat.getSender().equals(userid) ||
-                        chat.getReceiver().equals(userid) && chat.getSender().equals(myid)) {
-                    chats.add(chat);
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Chat chat = snapshot.getValue(Chat.class);
+                    if (chat.getReceiver().equals(myid) && chat.getSender().equals(userid) || chat.getReceiver().equals(userid) && chat.getSender().equals(myid)) chats.add(chat);
                 }
                 messageAdapter = new MessageAdapter(MessageActivity.this, chats, imageurl);
                 recyclerView.setAdapter(messageAdapter);
