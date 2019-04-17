@@ -122,11 +122,11 @@ public class ProfileFragment extends Fragment {
                 public void onComplete(@NonNull Task<Uri> task) {
                     if (task.isSuccessful()) {
                         Uri downloadUri = task.getResult();
-                        String uri = downloadUri.toString();
+                        String mUri = downloadUri.toString();
 
                         reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
                         HashMap<String, Object> hashMap = new HashMap<>();
-                        hashMap.put("imageURL", uri);
+                        hashMap.put("imageURL", mUri);
                         reference.updateChildren(hashMap);
 
                         progressDialog.dismiss();
@@ -149,7 +149,12 @@ public class ProfileFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) imageUri = data.getData();
-        else uploadImage();
+        if (requestCode == IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+            imageUri = data.getData();
+
+            if (uploadTask != null && uploadTask.isInProgress()) {
+                Toast.makeText(getContext(), "Upload In progress", Toast.LENGTH_SHORT).show();
+            } else uploadImage();
+        }
     }
 }
