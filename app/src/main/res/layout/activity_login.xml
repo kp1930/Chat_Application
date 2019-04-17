@@ -21,7 +21,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create a new account"
+            android:text="Login"
             android:textSize="20sp"
             android:textStyle="bold"/>
 
@@ -51,6 +51,16 @@
             android:layout_marginTop="10dp"
             android:text="Login"
             android:textColor="#FFF"/>
+
+        <TextView
+            android:id="@+id/forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot password?"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="end"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"/>
 
     </LinearLayout>
 
