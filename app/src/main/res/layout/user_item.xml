@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app1="http://schemas.android.com/apk/res-auto"
     android:padding="10dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -16,9 +17,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="username"
-        android:textSize="10sp"
+        android:textSize="12sp"
         android:layout_marginStart="10dp"
         android:layout_toEndOf="@id/profile_image"
         android:layout_centerVertical="true"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_on"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:visibility="gone"
+        app:civ_border_width="10dp"
+        app:civ_border_color="#05DF29"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginStart="-15dp"
+        android:layout_below="@+id/username"
+        android:layout_toEndOf="@+id/profile_image" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_off"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:visibility="gone"
+        app1:civ_border_width="10dp"
+        app:civ_border_color="#BFBFBF"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginStart="-15dp"
+        android:layout_below="@+id/username"
+        android:layout_toEndOf="@+id/profile_image" />
 
 </RelativeLayout>
